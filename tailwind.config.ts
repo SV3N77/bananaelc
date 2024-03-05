@@ -7,7 +7,17 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        rubyblue: "#79ADDC",
+        peach: "#FFC09F",
+        flax: "#FFEE93",
+        lavender: "#E9EBF8",
+        lemonchiffon: "#FCF5C7",
+        celadon: "#ADF7B6",
+        viridian: "#56876D",
+      },
+    },
   },
   plugins: [],
 };

@@ -3,8 +3,8 @@ import Image from "next/image";
 
 function Header() {
   return (
-    <header className="bg-green-400 p-10">
-      <nav className="container mx-auto flex flex-col items-center justify-center gap-4 text-lg text-white md:flex-row">
+    <header className="bg-viridian  p-10">
+      <nav className="container mx-auto flex flex-col items-center justify-center gap-4 text-lg md:flex-row">
         <Image
           src="/images/Banana.jpg"
           width={100}
