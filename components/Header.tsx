@@ -4,11 +4,11 @@ import Image from "next/image";
 function Header() {
   return (
     <header className="text-viridian">
-      <div className="bg-cover bg-center h-128 bg-[url('/images/childcare_banner.jpg')] flex flex-col gap-4">
+      <div className="bg-cover bg-center h-128 bg-[url('/images/childcare_banner.jpg')] flex flex-col gap-5">
         <div className="text-center text-5xl font-bold text-viridian">
           Banana Early Learning Centre
         </div>
-        <nav className="container mx-auto flex flex-col items-center justify-center gap-4 text-lg md:flex-row">
+        <nav className="container mx-auto flex flex-col items-center justify-center gap-8 text-lg md:flex-row">
           <Image
             src="/images/Banana.jpg"
             width={100}
@@ -48,17 +48,12 @@ type dropdownProps = {
 
 function Dropdown({ dropName, dropMenu }: dropdownProps) {
   return (
-    <div className="relative group/bouton ">
-      <button className="bg-stone-100 py-3 pr-12 min-w-44 relative ">
-        {dropName}
-      </button>
-      <div className="absolute bg-white top-full  origine-top opacity-0 hidden flex-col group-hover/bouton:flex group-hover/bouton:opacity-100 transition-all">
+    <div id="bouton" className="relative group/bouton">
+      <button className="py-3 relative min-w-36">{dropName}</button>
+      <div className="absolute opacity-0 min-w-36 hidden flex-col group-hover/bouton:flex group-hover/bouton:opacity-100 transition-all">
         {dropMenu.map((menu) => (
-          <div
-            key={menu}
-            className="relative flex justify-between items-center  py-6 border-b border-stone-200 px-10"
-          >
-            <div className="flex h-full items-center gap-3">
+          <div key={menu} className="relative flex justify-center">
+            <div className="flex items-center gap-3">
               <div className="mb-0 block flex-col">
                 <Link href="/">{menu}</Link>
               </div>
