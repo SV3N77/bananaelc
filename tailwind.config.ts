@@ -8,6 +8,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      height: {
+        128: "32rem",
+      },
       colors: {
         rubyblue: "#79ADDC",
         peach: "#FFC09F",
