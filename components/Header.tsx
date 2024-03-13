@@ -5,7 +5,7 @@ function Header() {
   return (
     <header className="text-viridian">
       <div className="bg-cover bg-center h-128 bg-[url('/images/childcare_banner.jpg')] flex flex-col gap-5">
-        <div className="text-center text-5xl font-bold text-viridian">
+        <div className="text-center text-5xl font-bold text-viridian mt-5">
           Banana Early Learning Centre
         </div>
         <nav className="container mx-auto flex flex-col items-center justify-center gap-8 text-lg md:flex-row">
@@ -16,11 +16,11 @@ function Header() {
             alt="Bananaelc Logo"
           />
           <Link href="/">Home</Link>
-          <Dropdown dropName="About" dropMenu={["Gallery"]} />
+          <Dropdown dropMenu={["About", "Gallery"]} />
           <Link href="/">Enrolment</Link>
           <Dropdown
-            dropName="Curriculum"
             dropMenu={[
+              "Curriculum",
               "Caterpillar Room",
               "Butterfly Room",
               "School Readiness",
@@ -42,20 +42,21 @@ export default Header;
 //Internal components
 
 type dropdownProps = {
-  dropName: string;
   dropMenu: string[];
 };
 
-function Dropdown({ dropName, dropMenu }: dropdownProps) {
+function Dropdown({ dropMenu }: dropdownProps) {
   return (
     <div id="bouton" className="relative group/bouton">
-      <button className="py-3 relative min-w-36">{dropName}</button>
+      <button className="py-3 relative min-w-36">
+        <Link href={`/${dropMenu[0]}`}>{dropMenu[0]}</Link>
+      </button>
       <div className="absolute opacity-0 min-w-36 hidden flex-col group-hover/bouton:flex group-hover/bouton:opacity-100 transition-all">
-        {dropMenu.map((menu) => (
+        {dropMenu.slice(1).map((menu) => (
           <div key={menu} className="relative flex justify-center">
             <div className="flex items-center gap-3">
               <div className="mb-0 block flex-col">
-                <Link href="/">{menu}</Link>
+                <Link href={`/${menu}`}>{menu}</Link>
               </div>
             </div>
           </div>
