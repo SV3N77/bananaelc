@@ -18,7 +18,7 @@ function Header() {
           Home
         </Link>
         <Dropdown dropMenu={["About", "Gallery"]} />
-        <Link href="/" className="hover:opacity-70">
+        <Link href="/Enrolment" className="hover:opacity-70">
           Enrolment
         </Link>
         <Dropdown
@@ -29,13 +29,13 @@ function Header() {
             "School Readiness",
           ]}
         />
-        <Link href="/" className="hover:opacity-70">
+        <Link href="/Before&AfterSchoolCare" className="hover:opacity-70">
           Before & After School Care
         </Link>
-        <Link href="/" className="hover:opacity-70">
+        <Link href="/FAQs" className="hover:opacity-70">
           FAQs
         </Link>
-        <Link href="/" className="hover:opacity-70">
+        <Link href="/Contact" className="hover:opacity-70">
           Contact
         </Link>
       </nav>
@@ -63,7 +63,7 @@ function Dropdown({ dropMenu }: dropdownProps) {
             className="relative flex justify-center hover:opacity-70 "
           >
             <div className="flex items-center gap-3">
-              <div className="mb-0 block flex-col ">
+              <div className="mb-0 block flex-col">
                 <Link href={`/${menu}`}>{menu}</Link>
               </div>
             </div>
